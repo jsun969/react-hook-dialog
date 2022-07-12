@@ -1,0 +1,19 @@
+{
+  "name": "react-hook-dialog",
+  "version": "0.0.0",
+  "description": "React hook for master your dialog component",
+  "source": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "dialog"
+  ],
+  "author": "Justin Sun",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}

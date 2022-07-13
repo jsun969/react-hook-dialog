@@ -4,6 +4,8 @@
   "description": "React hook for master your dialog component",
   "source": "src/index.ts",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"**/*.{js,ts,tsx}\"",
     "lint": "eslint \"**/*.{js,ts,tsx}\" --fix"
@@ -24,7 +26,17 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.0",
     "typescript": "^4.7.4"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
   }
 }

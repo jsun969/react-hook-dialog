@@ -4,7 +4,8 @@
   "description": "React hook for master your dialog component",
   "source": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"**/*.{js,ts,tsx,css}\""
   },
   "keywords": [
     "react",
@@ -14,6 +15,8 @@
   "author": "Justin Sun",
   "license": "MIT",
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   }
 }

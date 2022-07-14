@@ -1,4 +1,8 @@
-import type { Dialogs, UseDialogControllerReturn } from './types';
+import type {
+  Dialogs,
+  OmitOpenFromProps,
+  UseDialogControllerReturn,
+} from './types';
 import { useDialogController } from './useDialogController';
 
 type DialogControllerProps<
@@ -7,7 +11,9 @@ type DialogControllerProps<
 > = {
   name: TName;
   dialogs: TDialogs;
-  render: (props: UseDialogControllerReturn) => React.ReactElement;
+  render: (
+    props: UseDialogControllerReturn<OmitOpenFromProps<TDialogs[TName]>>,
+  ) => React.ReactElement;
 };
 
 export const DialogController = <
@@ -17,4 +23,4 @@ export const DialogController = <
   name,
   render,
 }: DialogControllerProps<TDialogs, TName>) =>
-  render(useDialogController(name as string));
+  render(useDialogController(name as any));

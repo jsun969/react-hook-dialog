@@ -1,7 +1,16 @@
-export type DialogProps = { isOpen: boolean } & Record<string, any>;
+export type DialogProps = Record<string, any>;
 
-export type Dialogs = Record<string, DialogProps>;
+export type DialogPropsWithOpen = { isOpen: boolean } & DialogProps;
 
-export type UseDialogControllerReturn = DialogProps & {
+export type Dialogs = Record<string, DialogPropsWithOpen>;
+
+export type OmitOpenFromProps<TProps extends DialogProps> = Omit<
+  TProps,
+  'isOpen'
+>;
+
+export type UseDialogControllerReturn<TProps extends DialogProps> = {
+  isOpen: boolean;
   handleClose: () => void;
+  props: TProps;
 };

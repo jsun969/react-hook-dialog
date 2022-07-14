@@ -1,6 +1,10 @@
 import { useDialogGlobalState } from './DialogProvider';
 import { closeDialog } from './logic/closeDialog';
-import type { Dialogs, UseDialogControllerReturn } from './types';
+import type {
+  Dialogs,
+  OmitOpenFromProps,
+  UseDialogControllerReturn,
+} from './types';
 
 export const useDialogController = <
   TDialogs extends Dialogs = Dialogs,
@@ -8,12 +12,16 @@ export const useDialogController = <
 >(
   name: TName extends keyof Dialogs ? TName : never,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  dialogs?: TDialogs,
-): UseDialogControllerReturn => {
+  _dialogs?: TDialogs,
+): UseDialogControllerReturn<OmitOpenFromProps<TDialogs[TName]>> => {
   const { globalState } = useDialogGlobalState();
 
   const { isOpen, ...props } = globalState[name];
   const handleClose = () => closeDialog(name);
 
-  return { isOpen, handleClose, props };
+  return {
+    isOpen,
+    handleClose,
+    props: props as OmitOpenFromProps<TDialogs[TName]>,
+  };
 };

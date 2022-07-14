@@ -1,18 +1,19 @@
 import { useDialogGlobalState } from './DialogProvider';
 import { closeDialog } from './logic/closeDialog';
-import type { Dialogs } from './types';
+import type { Dialogs, OmitOpenFromProps } from './types';
 
 export const useDialog = <
   TDialogs extends Dialogs = Dialogs,
-  TName extends keyof TDialogs = string,
-  TProps extends Partial<Omit<TDialogs[TName], 'isOpen'>> = {},
+  TName extends keyof TDialogs = keyof TDialogs,
 >(
   name: TName extends keyof Dialogs ? TName : never,
-  props?: TProps,
+  props?: Partial<OmitOpenFromProps<TDialogs[TName]>>,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _dialogs?: TDialogs,
 ) => {
   const { globalState, setGlobalState } = useDialogGlobalState();
 
-  const open = (openProps?: TProps) => {
+  const open = (openProps?: Partial<OmitOpenFromProps<TDialogs[TName]>>) => {
     setGlobalState((state) => {
       state[name] = {
         ...state[name],

@@ -13,6 +13,8 @@ type DialogControllerProps<
 export const DialogController = <
   TDialogs extends Dialogs = Dialogs,
   TName extends keyof TDialogs = string,
->(
-  props: DialogControllerProps<TDialogs, TName>,
-) => props.render(useDialogController(props.name as string));
+>({
+  name,
+  render,
+}: DialogControllerProps<TDialogs, TName>) =>
+  render(useDialogController(name as string));

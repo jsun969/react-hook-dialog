@@ -8,10 +8,6 @@
 npm install react-hook-dialog
 ```
 
-## 🚀 Quick Start
-
-See `/example`
-
 ## 🕹 API
 
 ### 🔗 `createDialogs`

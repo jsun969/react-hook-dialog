@@ -1,6 +1,7 @@
-# 💬 React Hook Dialog
-
-> React hook for master your dialog component
+<div align="center">
+  <h1>💬 React Hook Dialog</h1>
+  React hook for master your dialog component
+</div>
 
 ## 📦 Installation
 

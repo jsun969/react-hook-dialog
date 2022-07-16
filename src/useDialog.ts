@@ -16,7 +16,7 @@ export const useDialog = <
   const open = (openProps?: Partial<OmitOpenFromProps<TDialogs[TName]>>) => {
     setGlobalState((state) => ({
       ...state,
-      [name]: { ...state[name], isOpen: true, ...props, ...openProps },
+      [name]: { ...initialDialogs[name], isOpen: true, ...props, ...openProps },
     }));
   };
 

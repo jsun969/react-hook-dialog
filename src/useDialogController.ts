@@ -1,5 +1,4 @@
 import { useDialogGlobalState } from './DialogProvider';
-import { closeDialog } from './logic/closeDialog';
 import type {
   Dialogs,
   OmitOpenFromProps,
@@ -14,10 +13,16 @@ export const useDialogController = <
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _dialogs?: TDialogs,
 ): UseDialogControllerReturn<OmitOpenFromProps<TDialogs[TName]>> => {
-  const { globalState } = useDialogGlobalState();
+  const { globalState, setGlobalState, initialDialogs } =
+    useDialogGlobalState();
 
   const { isOpen, ...props } = globalState[name];
-  const handleClose = () => closeDialog(name);
+  const handleClose = () => {
+    setGlobalState((state) => {
+      state[name] = initialDialogs[name];
+      return state;
+    });
+  };
 
   return {
     isOpen,

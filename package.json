@@ -23,6 +23,7 @@
     "hook",
     "dialog"
   ],
+  "repository": "git@github.com:jsun969/react-hook-dialog.git",
   "author": "Justin Sun",
   "license": "MIT",
   "dependencies": {

@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "React hook for master your dialog component",
   "source": "src/index.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
     "require": "./dist/react-hook-dialog.cjs",
     "default": "./dist/react-hook-dialog.modern.js"

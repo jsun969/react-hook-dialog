@@ -18,10 +18,7 @@ export const useDialogController = <
 
   const { isOpen, ...props } = globalState[name];
   const handleClose = () => {
-    setGlobalState((state) => {
-      state[name] = initialDialogs[name];
-      return state;
-    });
+    setGlobalState((state) => ({ ...state, [name]: initialDialogs[name] }));
   };
 
   return {

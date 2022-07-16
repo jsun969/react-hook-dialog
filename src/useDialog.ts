@@ -14,22 +14,14 @@ export const useDialog = <
     useDialogGlobalState();
 
   const open = (openProps?: Partial<OmitOpenFromProps<TDialogs[TName]>>) => {
-    setGlobalState((state) => {
-      state[name] = {
-        ...state[name],
-        isOpen: true,
-        ...props,
-        ...openProps,
-      };
-      return state;
-    });
+    setGlobalState((state) => ({
+      ...state,
+      [name]: { ...state[name], isOpen: true, ...props, ...openProps },
+    }));
   };
 
   const close = () => {
-    setGlobalState((state) => {
-      state[name] = initialDialogs[name];
-      return state;
-    });
+    setGlobalState((state) => ({ ...state, [name]: initialDialogs[name] }));
   };
 
   return { open, close, isOpen: globalState[name].isOpen };

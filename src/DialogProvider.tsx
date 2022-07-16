@@ -18,9 +18,14 @@ type DialogProviderProps = {
 
 export const DialogProvider = ({ dialogs, children }: DialogProviderProps) => {
   const [globalState, setGlobalState] = useState(dialogs);
+
   return (
     <DialogContext.Provider
-      value={{ globalState, setGlobalState, initialDialogs: dialogs }}
+      value={{
+        globalState,
+        setGlobalState,
+        initialDialogs: { ...dialogs },
+      }}
     >
       {children}
     </DialogContext.Provider>

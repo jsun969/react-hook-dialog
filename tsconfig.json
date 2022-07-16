@@ -5,6 +5,8 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "jsx": "react-jsx",
+    "jsxFactory": "",
+    "jsxFragmentFactory": "",
     "skipLibCheck": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,

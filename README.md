@@ -1,6 +1,15 @@
 <div align="center">
   <h1>💬 React Hook Dialog</h1>
+  
   React hook for master your dialog component
+</div>
+
+<div align="center">
+
+[![version](https://img.shields.io/npm/v/react-hook-dialog?style=for-the-badge)](https://www.npmjs.com/package/react-hook-dialog)
+[![license](https://img.shields.io/npm/l/react-hook-dialog?style=for-the-badge)](https://github.com/jsun969/react-hook-dialog/blob/main/LICENSE)
+[![size](https://img.shields.io/bundlephobia/minzip/react-hook-dialog?style=for-the-badge)](https://bundlephobia.com/result?p=react-hook-dialog)
+
 </div>
 
 ## 📦 Installation

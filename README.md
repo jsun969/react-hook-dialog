@@ -12,6 +12,12 @@
 
 </div>
 
+## ✨ Features
+
+- TYPE SAFE
+- Easy to use
+- Super light
+
 ## 📦 Installation
 
 ```bash

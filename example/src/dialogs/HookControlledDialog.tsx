@@ -1,11 +1,9 @@
-import { useDialogController } from '../../../src';
 import Dialog from '../components/Dialog';
-import { dialogs } from '../main';
+import { dialog } from '../lib/dialogs';
 
 const HookControlledDialog: React.FC = () => {
-  const { isOpen, handleClose, props } = useDialogController(
+  const { isOpen, handleClose, props } = dialog.useDialogController(
     'hookControlledDialog',
-    dialogs,
   );
 
   return <Dialog open={isOpen} onClose={handleClose} {...props} />;

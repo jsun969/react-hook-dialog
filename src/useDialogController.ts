@@ -7,7 +7,7 @@ import type {
 
 export const useDialogController = <
   TDialogs extends Dialogs = Dialogs,
-  TName extends keyof TDialogs = string,
+  TName extends keyof TDialogs = keyof TDialogs,
 >(
   name: TName extends keyof Dialogs ? TName : never,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -1,6 +1,6 @@
 import { DialogController } from '../../../src';
 import Dialog from '../components/Dialog';
-import { dialogs } from '../main';
+import { dialogs } from '../lib/dialogs';
 
 const ComponentControlledDialog: React.FC = () => {
   return (

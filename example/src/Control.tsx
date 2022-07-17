@@ -1,18 +1,17 @@
-import { useDialog } from '../../src';
-import { dialogs } from './main';
+import { dialog } from './lib/dialogs';
 
 function Control() {
   const {
     isOpen: isHookDialogOpen,
     open: openHookDialog,
     close: closeHookDialog,
-  } = useDialog('hookControlledDialog', {}, dialogs);
+  } = dialog.useDialog('hookControlledDialog');
 
   const {
     isOpen: isComponentDialogOpen,
     open: openComponentDialog,
     close: closeComponentDialog,
-  } = useDialog('componentControlledDialog', {}, dialogs);
+  } = dialog.useDialog('componentControlledDialog');
 
   return (
     <div>

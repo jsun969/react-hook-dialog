@@ -14,9 +14,9 @@
 
 ## ✨ Features
 
-- TYPE SAFE
-- Easy to use
-- Super light
+- 🧙‍♂️ TYPE SAFE
+- 🐎 Awesome DX
+- 🍃 Super light
 
 ## 📦 Installation
 

@@ -1,6 +1,6 @@
 {
   "name": "react-hook-dialog",
-  "version": "1.0.2",
+  "version": "1.0.3-beta.0",
   "description": "React hook for master your dialog component",
   "source": "src/index.ts",
   "files": [
@@ -15,6 +15,7 @@
   "unpkg": "dist/react-hook-dialog.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prepare": "simple-git-hooks",
     "prepublishOnly": "rimraf dist && pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "microbundle --globals react/jsx-runtime=jsx",

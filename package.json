@@ -22,7 +22,8 @@
   "keywords": [
     "react",
     "hook",
-    "dialog"
+    "dialog",
+    "modal"
   ],
   "repository": "git@github.com:jsun969/react-hook-dialog.git",
   "author": "Justin Sun",

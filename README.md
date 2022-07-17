@@ -113,8 +113,7 @@ A hook to use any dialogs anywhere!
 
 const { open, close, isOpen } = dialog.useDialog(
   'dialogName',
-  // Dialog props
-  { title: 'New Title' },
+  { title: 'New Title' }, // Dialog props
 );
 ```
 

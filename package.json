@@ -7,15 +7,14 @@
     "dist"
   ],
   "exports": {
-    "require": "./dist/react-hook-dialog.cjs",
-    "default": "./dist/react-hook-dialog.modern.js"
+    "require": "dist/react-hook-dialog.cjs",
+    "default": "dist/react-hook-dialog.modern.js"
   },
-  "main": "./dist/react-hook-dialog.cjs",
-  "module": "./dist/react-hook-dialog.module.js",
-  "unpkg": "./dist/react-hook-dialog.umd.js",
+  "main": "dist/react-hook-dialog.cjs",
+  "module": "dist/react-hook-dialog.module.js",
+  "unpkg": "dist/react-hook-dialog.umd.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "postinstall": "simple-git-hooks",
     "prepublishOnly": "rimraf dist && pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "microbundle --globals react/jsx-runtime=jsx",

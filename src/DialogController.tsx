@@ -7,10 +7,10 @@ import { useDialogController } from './useDialogController';
 
 type DialogControllerProps<
   TDialogs extends Dialogs = Dialogs,
-  TName extends keyof TDialogs = string,
+  TName extends keyof TDialogs = keyof TDialogs,
 > = {
+  dialogs?: TDialogs;
   name: TName;
-  dialogs: TDialogs;
   render: (
     props: UseDialogControllerReturn<OmitOpenFromProps<TDialogs[TName]>>,
   ) => React.ReactElement;
@@ -18,7 +18,7 @@ type DialogControllerProps<
 
 export const DialogController = <
   TDialogs extends Dialogs = Dialogs,
-  TName extends keyof TDialogs = string,
+  TName extends keyof TDialogs = keyof TDialogs,
 >({
   name,
   render,

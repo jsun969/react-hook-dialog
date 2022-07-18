@@ -6,7 +6,7 @@ export const createDialogHooks = <
   TDialogs extends Dialogs = Dialogs,
   TName extends keyof TDialogs = keyof TDialogs,
 >(
-  dialogs: TDialogs,
+  dialogs?: TDialogs,
 ) => {
   const useDialog = (
     name: TName extends keyof Dialogs ? TName : never,

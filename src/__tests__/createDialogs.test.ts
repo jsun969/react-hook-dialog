@@ -1,23 +1,11 @@
 import { createDialogs } from '../createDialogs';
-import { dialogs } from './__fixtures__/data';
-
-type FirstDialogProps = { title: string; content: string };
-type SecondDialogProps = { lol: string; olo: string };
+import type { DialogProps } from './__fixtures__/dialogs';
+import { dialogs } from './__fixtures__/dialogs';
 
 describe('createDialogs', () => {
   it('should add isOpen:false to all dialogs', () => {
-    const testDialogs = createDialogs<
-      FirstDialogProps | SecondDialogProps,
-      'firstDialogName' | 'secondDialogName'
-    >({
-      firstDialogName: {
-        title: '',
-        content: '',
-      },
-      secondDialogName: {
-        lol: '',
-        olo: '',
-      },
+    const testDialogs = createDialogs<DialogProps, 'dialogName'>({
+      dialogName: { title: '', content: '' },
     });
     expect(testDialogs).toEqual(dialogs);
   });

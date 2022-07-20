@@ -72,28 +72,18 @@ describe('useDialog', () => {
   it('props should be modified in open with the highest priority when open', () => {
     const { result } = renderHook(
       () => ({
-        dialog: useDialog(
-          'dialogName',
-          {
-            title: 'Modified Title by hook',
-            content: 'modified content by hook',
-          },
-          dialogs,
-        ),
+        dialog: useDialog('dialogName', modifiedProps, dialogs),
         globalState: useDialogGlobalState(),
       }),
       { wrapper: contextWrapper },
     );
     act(() => {
-      result.current.dialog.open({
-        title: 'Modified Title by open',
-        content: 'modified content by open',
-      });
+      result.current.dialog.open({ title: 'Modified Title by open' });
     });
     expect(result.current.globalState.globalState.dialogName).toEqual({
       isOpen: true,
       title: 'Modified Title by open',
-      content: 'modified content by open',
+      content: 'modified content',
     });
   });
 });

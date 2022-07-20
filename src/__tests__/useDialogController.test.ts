@@ -32,10 +32,12 @@ describe('useDialogController', () => {
     act(() => {
       result.current.globalState.setGlobalState(openDialogs);
     });
-    expect(result.current.controller.isOpen).toBe(true);
+    expect(result.current.globalState.globalState.dialogName.isOpen).toBe(true);
     act(() => {
       result.current.controller.handleClose();
     });
-    expect(result.current.controller.isOpen).toBe(false);
+    expect(result.current.globalState.globalState.dialogName.isOpen).toBe(
+      false,
+    );
   });
 });

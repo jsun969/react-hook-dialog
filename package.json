@@ -1,6 +1,6 @@
 {
   "name": "react-hook-dialog",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "React hook for master your dialog component",
   "sideEffects": false,
   "source": "src/index.ts",

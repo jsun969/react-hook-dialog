@@ -2,7 +2,7 @@ import { DialogProvider } from '../../DialogProvider';
 import { dialogs } from './dialogs';
 
 type ContextWrapperProps = {
-  children?: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  children?: React.ReactElement;
 };
 
 export const contextWrapper = ({ children }: ContextWrapperProps) => (

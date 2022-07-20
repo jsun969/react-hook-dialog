@@ -4,7 +4,7 @@ export type DialogPropsWithOpen = { isOpen: boolean } & DialogProps;
 
 export type Dialogs = Record<string, DialogPropsWithOpen>;
 
-export type OmitOpenFromProps<TProps extends DialogProps> = Omit<
+export type OmitOpenInProps<TProps extends DialogProps> = Omit<
   TProps,
   'isOpen'
 >;

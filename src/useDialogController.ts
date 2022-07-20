@@ -1,7 +1,7 @@
 import { useDialogGlobalState } from './DialogProvider';
 import type {
   Dialogs,
-  OmitOpenFromProps,
+  OmitOpenInProps,
   UseDialogControllerReturn,
 } from './types';
 
@@ -12,7 +12,7 @@ export const useDialogController = <
   name: TName extends keyof Dialogs ? TName : never,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _dialogs?: TDialogs,
-): UseDialogControllerReturn<OmitOpenFromProps<TDialogs[TName]>> => {
+): UseDialogControllerReturn<OmitOpenInProps<TDialogs[TName]>> => {
   const { globalState, setGlobalState, initialDialogs } =
     useDialogGlobalState();
 
@@ -24,6 +24,6 @@ export const useDialogController = <
   return {
     isOpen,
     handleClose,
-    props: props as OmitOpenFromProps<TDialogs[TName]>,
+    props: props as OmitOpenInProps<TDialogs[TName]>,
   };
 };

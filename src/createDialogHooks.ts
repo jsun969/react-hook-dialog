@@ -1,4 +1,4 @@
-import type { Dialogs, OmitOpenFromProps } from './types';
+import type { Dialogs, OmitOpenInProps } from './types';
 import { useDialog as _useDialog } from './useDialog';
 import { useDialogController as _useDialogController } from './useDialogController';
 
@@ -10,7 +10,7 @@ export const createDialogHooks = <
 ) => {
   const useDialog = (
     name: TName extends keyof Dialogs ? TName : never,
-    props?: Partial<OmitOpenFromProps<TDialogs[TName]>>,
+    props?: Partial<OmitOpenInProps<TDialogs[TName]>>,
   ) => _useDialog(name, props, dialogs);
   const useDialogController = (
     name: TName extends keyof Dialogs ? TName : never,

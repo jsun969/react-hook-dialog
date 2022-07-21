@@ -16,6 +16,11 @@ React hook for master your dialog component
 - 🐎 Awesome DX
 - 🍃 Super light
 
+## 🕶 Example
+
+- [Material UI](https://codesandbox.io/s/rhd-mui-example-etwz20)
+- [Ant Design](https://codesandbox.io/s/rhd-antd-example-qhj7zy)
+
 ## 📦 Installation
 
 ```bash
@@ -105,11 +110,6 @@ const YourComponent: React.FC = () => {
 
 export default YourComponent;
 ```
-
-## 🕶 Example
-
-- [Material UI](https://codesandbox.io/s/rhd-mui-example-etwz20)
-- [Ant Design](https://codesandbox.io/s/rhd-antd-example-qhj7zy)
 
 ## 🕹 API
 

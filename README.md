@@ -31,7 +31,7 @@ import { createDialogs, createDialogHooks } from 'react-hook-dialog';
 
 type CustomDialogProps = { title: string; content: string };
 
-export const dialogs = createDialog<CustomDialogProps, 'customDialog'>({
+export const dialogs = createDialogs<CustomDialogProps, 'customDialog'>({
   customDialog: { title: '', content: '' },
 });
 
@@ -41,7 +41,7 @@ export const dialog = createDialogHooks(dialogs);
 `components/CustomDialog.tsx`
 
 ```tsx
-import { dialog } from '../lib/dialog.ts';
+import { dialog } from '../lib/dialog';
 import { Dialog } from 'your-ui-lib';
 
 const CustomDialog: React.FC = () => {
@@ -64,7 +64,7 @@ export default CustomDialog;
 ```tsx
 import App from './App';
 import CustomDialog from './components/CustomDialog';
-import { dialogs } from './lib/dialog.ts';
+import { dialogs } from './lib/dialog';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { DialogProvider } from 'react-hook-dialog';
@@ -82,7 +82,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 `anywhere`
 
 ```tsx
-import { dialog } from 'dir to lib/dialog.ts';
+import { dialog } from 'dir to lib/dialog';
 
 const YourComponent: React.FC = () => {
   const { open, close, isOpen } = dialog.useDialog('customDialog', {

@@ -2,34 +2,34 @@
 
 # 💬 React Hook Dialog
 
-React hook for master your dialog component
+用 React hook 拿捏你的对话框组件
 
 [![version](https://img.shields.io/npm/v/react-hook-dialog?style=for-the-badge)](https://www.npmjs.com/package/react-hook-dialog)
 [![license](https://img.shields.io/npm/l/react-hook-dialog?style=for-the-badge)](https://github.com/jsun969/react-hook-dialog/blob/main/LICENSE)
 [![size](https://img.shields.io/bundlephobia/minzip/react-hook-dialog?style=for-the-badge)](https://bundlephobia.com/result?p=react-hook-dialog)
 
-English | [简体中文](./README_zh-CN.md)
+[English](./README.md) | 简体中文
 
 </div>
 
-## ✨ Features
+## ✨ 特性
 
-- 🧙‍♂️ TYPE SAFE
-- 🐎 Awesome DX
-- 🍃 Super light
+- 🧙‍♂️ 类型安全
+- 🐎 开发友好
+- 🍃 轻量至极
 
-## 🕶 Example
+## 🕶 例子
 
 - [Material UI](https://codesandbox.io/s/rhd-mui-example-etwz20)
 - [Ant Design](https://codesandbox.io/s/rhd-antd-example-qhj7zy)
 
-## 📦 Installation
+## 📦 安装
 
 ```bash
 npm install react-hook-dialog
 ```
 
-## 🎯 Quickstart
+## 🎯 快速上手
 
 `lib/dialog.ts`
 
@@ -86,25 +86,25 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 );
 ```
 
-`anywhere`
+`任何地方`
 
 ```tsx
-import { dialog } from 'dir to lib/dialog';
+import { dialog } from '路径至 lib/dialog';
 
 const YourComponent: React.FC = () => {
   const { open, close, isOpen } = dialog.useDialog('customDialog', {
-    title: 'Some Title',
-    content: 'some content',
+    title: '标题',
+    content: '内容',
   });
 
   return (
     <>
-      <div>Dialog Status: {isOpen ? 'open' : 'closed'}</div>
-      <button onClick={() => open()}>Open Dialog</button>
-      <button onClick={() => close()}>Close Dialog</button>
-      <button onClick={() => open({ title: 'Another Title' })}>
-        Open Another Dialog
-        {/* { title: 'Another Title', content: 'some content' } */}
+      <div>对话框状态: {isOpen ? '开启' : '关闭'}</div>
+      <button onClick={() => open()}>打开对话框</button>
+      <button onClick={() => close()}>关闭对话框</button>
+      <button onClick={() => open({ title: '另一个标题' })}>
+        打开另一个对话框
+        {/* { title: '另一个标题', content: '内容' } */}
       </button>
     </>
   );
@@ -117,15 +117,15 @@ export default YourComponent;
 
 ### 🔗 `createDialogs`
 
-Initialize your dialogs name and props
+初始化对话框名和 Props
 
 ```ts
 type FirstDialogProps = { title: string; content: string };
 type SecondDialogProps = { lol: string; olo: string };
 
-// For type-safe, you can provide 2 generic types
-// 1. The union type of your dialog props
-// 2. The union type of your dialog names
+// 为了类型安全，您可以提供两个泛型
+// 1. 对话框组件 Props 的联合类型
+// 2. 对话框名的联合类型
 const dialogs = createDialogs<
   FirstDialogProps | SecondDialogProps,
   'firstDialogName' | 'secondDialogName'
@@ -153,7 +153,7 @@ const dialogs = createDialogs<
 
 ### 🔗 `createDialogHooks`
 
-Create type-safe dialog hooks
+创建类型安全的对话框 Hooks
 
 ```ts
 const dialog = createDialogHooks(dialogs);
@@ -161,7 +161,7 @@ const dialog = createDialogHooks(dialogs);
 
 ### 🔗 `useDialogController`
 
-A hook to control your dialog component
+一个控制对话框组建的 Hook
 
 ```tsx
 const { isOpen, handleClose, props } = dialog.useDialogController('dialogName');
@@ -171,7 +171,7 @@ return <Dialog open={isOpen} onClose={handleClose} {...props}>
 
 ### 🔗 `DialogController`
 
-The component form of `useDialogController`
+`useDialogController` 的组件形式
 
 ```tsx
 <DialogController
@@ -185,11 +185,11 @@ The component form of `useDialogController`
 
 ### 🔗 `useDialog`
 
-A hook to use any dialogs anywhere!
+一个让你在任何地方使用任何对话框的 Hook！
 
 > **Note**  
-> You may have found that the dialog props can be defined in 3 places  
-> Priority: `open` > `useDialog` > `createDialogs`
+> 你可能发现对话框 Props 能够在三个地方被定义  
+> 优先级: `open` > `useDialog` > `createDialogs`
 
 ```tsx
 const { open, close, isOpen } = dialog.useDialog(

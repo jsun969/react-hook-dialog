@@ -2,7 +2,7 @@
 
 # 💬 React Hook Dialog
 
-React hook for master your dialog component
+React hooks for master your dialog(modal) component
 
 [![version](https://img.shields.io/npm/v/react-hook-dialog?style=for-the-badge)](https://www.npmjs.com/package/react-hook-dialog)
 [![license](https://img.shields.io/npm/l/react-hook-dialog?style=for-the-badge)](https://github.com/jsun969/react-hook-dialog/blob/main/LICENSE)

@@ -2,7 +2,7 @@
 
 # 💬 React Hook Dialog
 
-用 React hook 拿捏你的对话框组件
+用 React hooks 拿捏你的对话框组件
 
 [![version](https://img.shields.io/npm/v/react-hook-dialog?style=for-the-badge)](https://www.npmjs.com/package/react-hook-dialog)
 [![license](https://img.shields.io/npm/l/react-hook-dialog?style=for-the-badge)](https://github.com/jsun969/react-hook-dialog/blob/main/LICENSE)

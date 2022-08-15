@@ -194,14 +194,14 @@ return <Dialog open={isOpen} onClose={handleClose} {...props}>
 ```tsx
 const { open, close, isOpen } = dialog.useDialog(
   'dialogName',
-  { title: 'New Title' }, // Dialog props
+  { title: '新标题' }, // 对话框 Props
 );
 ```
 
 ```tsx
 <>
-  <div>Dialog Status: {isOpen ? 'open' : 'closed'}</div>
-  <button onClick={() => open({ title: 'New New Title' })}>Open</button>
-  <button onClick={() => close()}>Close</button>
+  <div>对话框状态: {isOpen ? '开启' : '关闭'}</div>
+  <button onClick={() => open({ title: '另一个新标题' })}>打开</button>
+  <button onClick={() => close()}>关闭</button>
 </>
 ```

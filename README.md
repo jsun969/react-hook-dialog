@@ -48,8 +48,9 @@ export const dialog = createDialogHooks(dialogs);
 `components/CustomDialog.tsx`
 
 ```tsx
-import { dialog } from '../lib/dialog';
 import { Dialog } from 'your-ui-lib';
+
+import { dialog } from '../lib/dialog';
 
 const CustomDialog: React.FC = () => {
   const { isOpen, handleClose, props } =
@@ -69,12 +70,13 @@ export default CustomDialog;
 `main.tsx`
 
 ```tsx
-import App from './App';
-import CustomDialog from './components/CustomDialog';
-import { dialogs } from './lib/dialog';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { DialogProvider } from 'react-hook-dialog';
+
+import App from './App';
+import CustomDialog from './components/CustomDialog';
+import { dialogs } from './lib/dialog';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

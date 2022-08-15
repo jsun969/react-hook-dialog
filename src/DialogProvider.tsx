@@ -1,5 +1,6 @@
-import type { Dialogs } from './types';
 import { createContext, useContext, useState } from 'react';
+
+import type { Dialogs } from './types';
 
 type DialogContentValue = {
   globalState: Dialogs;

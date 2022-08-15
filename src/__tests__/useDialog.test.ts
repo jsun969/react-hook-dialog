@@ -1,9 +1,10 @@
+import { renderHook } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
+
 import { useDialogGlobalState } from '../DialogProvider';
 import { useDialog } from '../useDialog';
 import { contextWrapper } from './__fixtures__/contextWrapper';
 import { dialogs, openDialogs } from './__fixtures__/dialogs';
-import { renderHook } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
 
 const modifiedProps = { title: 'Modified Title', content: 'modified content' };
 

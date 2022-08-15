@@ -16,7 +16,7 @@
     "prepublishOnly": "pnpm run build",
     "build": "rimraf dist && microbundle -f es,umd,cjs --globals react/jsx-runtime=jsx",
     "test": "jest",
-    "format": "prettier --write \"**/*.{js,ts,tsx}\"",
+    "format": "prettier --write \"**/*.{js,ts,tsx,md}\"",
     "lint": "eslint \"**/*.{js,ts,tsx}\" --fix"
   },
   "keywords": [
@@ -57,11 +57,11 @@
     "react": "^16.8.0 || ^17 || ^18"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "*.{js,ts,tsx,md}": [
       "prettier --write"
     ]
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm exec lint-staged"
+    "pre-commit": "npx lint-staged"
   }
 }

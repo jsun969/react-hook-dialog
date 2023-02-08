@@ -1,16 +1,20 @@
+import type React from 'react';
 import { createContext, useContext, useState } from 'react';
 
 import type { Dialogs } from './types';
 
-type DialogContentValue = {
-  globalState: Dialogs;
-  setGlobalState: React.Dispatch<React.SetStateAction<Dialogs>>;
-  initialDialogs: Dialogs;
+type DialogContentValue<TDialogs extends Dialogs> = {
+  globalState: TDialogs;
+  setGlobalState: React.Dispatch<React.SetStateAction<TDialogs>>;
+  initialDialogs: TDialogs;
 };
 
-const DialogContext = createContext<DialogContentValue>(null as any);
+const DialogContext = createContext<DialogContentValue<Dialogs>>(null as any);
 
-export const useDialogGlobalState = () => useContext(DialogContext);
+export const useDialogGlobalState = <TDialogs extends Dialogs>() =>
+  useContext(
+    DialogContext as unknown as React.Context<DialogContentValue<TDialogs>>,
+  );
 
 type DialogProviderProps = {
   dialogs: Dialogs;

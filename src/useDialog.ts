@@ -1,19 +1,18 @@
 import { useDialogGlobalState } from './DialogProvider';
-import type { Dialogs, OmitOpenInProps } from './types';
+import type { Dialogs, GetDialogProps } from './types';
 
 export const useDialog = <
-  TDialogs extends Dialogs = Dialogs,
-  TName extends keyof TDialogs = keyof TDialogs,
+  TDialogs extends Dialogs,
+  TName extends keyof TDialogs,
+  TProps extends GetDialogProps<TDialogs[TName]>,
 >(
-  name: TName extends keyof Dialogs ? TName : never,
-  props?: Partial<OmitOpenInProps<TDialogs[TName]>>,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _dialogs?: TDialogs,
+  name: TName,
+  props?: TProps,
 ) => {
   const { globalState, setGlobalState, initialDialogs } =
-    useDialogGlobalState();
+    useDialogGlobalState<TDialogs>();
 
-  const open = (openProps?: Partial<OmitOpenInProps<TDialogs[TName]>>) => {
+  const open = (openProps?: TProps) => {
     setGlobalState((state) => ({
       ...state,
       [name]: { ...initialDialogs[name], isOpen: true, ...props, ...openProps },

@@ -36,9 +36,7 @@ npm install react-hook-dialog
 ```tsx
 import { createDialogs, createDialogHooks } from 'react-hook-dialog';
 
-type CustomDialogProps = { title: string; content: string };
-
-export const dialogs = createDialogs<CustomDialogProps, 'customDialog'>({
+export const dialogs = createDialogs({
   customDialog: { title: '', content: '' },
 });
 
@@ -122,16 +120,7 @@ export default YourComponent;
 Initialize your dialogs name and props
 
 ```ts
-type FirstDialogProps = { title: string; content: string };
-type SecondDialogProps = { lol: string; olo: string };
-
-// For type-safe, you can provide 2 generic types
-// 1. The union type of your dialog props
-// 2. The union type of your dialog names
-const dialogs = createDialogs<
-  FirstDialogProps | SecondDialogProps,
-  'firstDialogName' | 'secondDialogName'
->({
+const dialogs = createDialogs({
   firstDialogName: {
     title: '',
     content: '',
@@ -169,20 +158,6 @@ A hook to control your dialog component
 const { isOpen, handleClose, props } = dialog.useDialogController('dialogName');
 
 return <Dialog open={isOpen} onClose={handleClose} {...props}>
-```
-
-### 🔗 `DialogController`
-
-The component form of `useDialogController`
-
-```tsx
-<DialogController
-  dialogs={dialogs}
-  name="dialogName"
-  render={({ isOpen, handleClose, props }) => (
-    <Dialog open={isOpen} onClose={handleClose} {...props} />
-  )}
-/>
 ```
 
 ### 🔗 `useDialog`

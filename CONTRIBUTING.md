@@ -6,28 +6,30 @@ As the creators and maintainers of this project, we want to ensure that `react-h
 
 Here is a quick guide to doing code contributions to the library.
 
-1. Fork and clone the repo to your local machine
+1. Fork and clone the repo to your local machine.
 
 ```bash
 git clone https://github.com/YOUR_GITHUB_USERNAME/react-hook-dialog.git
 ```
 
-2. Create a new branch from `main` with a meaningful name for a new feature or an issue you want to work on:
+2. Create a new branch from `main` with a meaningful name for a new feature or an issue you want to work on.
 
 ```bash
 git checkout -b your-meaningful-branch-name
 ```
 
-3. Install packages by running:
+3. Install packages by running.
 
 ```bash
 pnpm install
 ```
 
-4. If you've added a code that should be tested, ensure the test suite still passes.
+4. Test your code in example.
 
 ```bash
-pnpm run test
+cd example
+pnpm install
+pnpm run dev
 ```
 
 5. Try to write some unit tests to cover as much of your code as possible.
@@ -44,7 +46,7 @@ pnpm run lint
 pnpm run build
 ```
 
-8. Push your branch:
+8. Push your branch.
 
 ```bash
 git push -u origin your-meaningful-branch-name

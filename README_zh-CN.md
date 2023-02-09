@@ -36,9 +36,7 @@ npm install react-hook-dialog
 ```tsx
 import { createDialogs, createDialogHooks } from 'react-hook-dialog';
 
-type CustomDialogProps = { title: string; content: string };
-
-export const dialogs = createDialogs<CustomDialogProps, 'customDialog'>({
+export const dialogs = createDialogs({
   customDialog: { title: '', content: '' },
 });
 
@@ -122,16 +120,7 @@ export default YourComponent;
 初始化对话框名和 Props
 
 ```ts
-type FirstDialogProps = { title: string; content: string };
-type SecondDialogProps = { lol: string; olo: string };
-
-// 为了类型安全，您可以提供两个泛型
-// 1. 对话框组件 Props 的联合类型
-// 2. 对话框名的联合类型
-const dialogs = createDialogs<
-  FirstDialogProps | SecondDialogProps,
-  'firstDialogName' | 'secondDialogName'
->({
+const dialogs = createDialogs({
   firstDialogName: {
     title: '',
     content: '',
@@ -169,20 +158,6 @@ const dialog = createDialogHooks(dialogs);
 const { isOpen, handleClose, props } = dialog.useDialogController('dialogName');
 
 return <Dialog open={isOpen} onClose={handleClose} {...props}>
-```
-
-### 🔗 `DialogController`
-
-`useDialogController` 的组件形式
-
-```tsx
-<DialogController
-  dialogs={dialogs}
-  name="dialogName"
-  render={({ isOpen, handleClose, props }) => (
-    <Dialog open={isOpen} onClose={handleClose} {...props} />
-  )}
-/>
 ```
 
 ### 🔗 `useDialog`

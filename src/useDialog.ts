@@ -1,5 +1,5 @@
 import { useDialogGlobalState } from './DialogProvider';
-import type { Dialogs, GetDialogProps } from './types';
+import type { Dialogs, GetDialogHookReturn, GetDialogProps } from './types';
 
 export const useDialog = <
   TDialogs extends Dialogs,
@@ -8,7 +8,9 @@ export const useDialog = <
 >(
   name: TName,
   props?: TProps,
-) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  dialogs?: TDialogs,
+): GetDialogHookReturn<TProps> => {
   const { globalState, setGlobalState, initialDialogs } =
     useDialogGlobalState<TDialogs>();
 

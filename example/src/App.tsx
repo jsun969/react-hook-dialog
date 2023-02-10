@@ -4,7 +4,10 @@ import { d } from './lib/dialog';
 
 function App() {
   const { open: open1, close: close1 } = d.useDialog('dialog1');
-  const { open: open2, close: close2 } = d.useDialog('dialog2');
+  const { open: open2, close: close2 } = d.useDialog('dialog2', {
+    title2: 'LOL',
+    content2: 'lololol',
+  });
 
   return (
     <>
@@ -12,6 +15,9 @@ function App() {
       <button onClick={close1}>Close Dialog 1</button>
       <button onClick={() => open2()}>Open Dialog 2</button>
       <button onClick={close2}>Close Dialog 2</button>
+      <button onClick={() => open2({ content2: 'llooll' })}>
+        Open Different Dialog 2
+      </button>
       <Dialog1 />
       <Dialog2 />
     </>

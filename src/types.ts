@@ -15,7 +15,7 @@ export type GetDialogControllerHookReturn<TDialog extends DialogPropsWithOpen> =
 export type GetDialogHookReturn<
   TProps extends GetDialogProps<DialogPropsWithOpen>,
 > = {
-  open: (openProps?: TProps) => void;
+  open: (openProps?: Partial<TProps>) => void;
   close: () => void;
   isOpen: boolean;
 };

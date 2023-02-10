@@ -50,7 +50,7 @@ import { Dialog } from 'your-ui-lib';
 
 import { dialog } from '../lib/dialog';
 
-const CustomDialog: React.FC = () => {
+const CustomDialog = () => {
   const { isOpen, handleClose, props } =
     dialog.useDialogController('customDialog');
 
@@ -91,7 +91,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 ```tsx
 import { dialog } from 'dir to lib/dialog';
 
-const YourComponent: React.FC = () => {
+const YourComponent = () => {
   const { open, close, isOpen } = dialog.useDialog('customDialog', {
     title: 'Some Title',
     content: 'some content',
